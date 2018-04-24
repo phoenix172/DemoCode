@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\iyochev\.Rider2018.1\system\resharper-host\local\Transient\ReSharperHost\v12\SolutionCaches\_SoftwareTestingDemo.Calculator.908192590.00" t="ExcludeRecursive" />
+    <e p="C:\Users\iyochev\RiderProjects\SoftwareTestingDemo.Calculator" t="IncludeFlat">
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="SoftwareTestingDemo.CalculationLib" t="IncludeRecursive">
+        <e p="BasicCalculator.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="FileLogger.cs" t="Include" />
+        <e p="ICalculator.cs" t="Include" />
+        <e p="ILogger.cs" t="Include" />
+        <e p="LoggingCalculator.cs" t="Include" />
+        <e p="MathOperation.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="SoftwareTestingDemo.CalculationLib.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="SoftwareTestingDemo.CalculationLib.Tests" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Integration" t="Include">
+          <e p="LoggingCalculatorTests.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="SoftwareTestingDemo.CalculationLib.Tests.csproj" t="IncludeRecursive" />
+        <e p="Unit" t="Include">
+          <e p="BasicCalculatorTests.cs" t="Include" />
+          <e p="FakeLogger.cs" t="Include" />
+          <e p="LoggingCalculatorTests.cs" t="Include" />
+          <e p="MockLogger.cs" t="Include" />
+          <e p="StubLogger.cs" t="Include" />
+        </e>
+      </e>
+      <e p="SoftwareTestingDemo.Calculator" t="IncludeRecursive">
+        <e p="App.config" t="Include" />
+        <e p="App.xaml" t="Include" />
+        <e p="App.xaml.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="CalculateCommand.cs" t="Include" />
+        <e p="CalculatorViewModel.cs" t="Include" />
+        <e p="ICalculatorViewModel.cs" t="Include" />
+        <e p="MainWindow.xaml" t="Include" />
+        <e p="MainWindow.xaml.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="ObjectToTypeConverter.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="Annotations.cs" t="Include" />
+          <e p="AssemblyInfo.cs" t="Include" />
+          <e p="Resources.Designer.cs" t="Include" />
+          <e p="Resources.resx" t="Include" />
+        </e>
+        <e p="SoftwareTestingDemo.Calculator.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="SoftwareTestingDemo.Calculator.sln" t="IncludeFlat" />
+    </e>
+  </component>
+</project>
