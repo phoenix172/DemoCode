@@ -59,11 +59,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Integration\LoggingCalculatorTests.cs" />
+    <Compile Include="Integration\MockLogger.cs" />
+    <Compile Include="Integration\StubLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Unit\BasicCalculatorTests.cs" />
-    <Compile Include="Unit\MockLogger.cs" />
-    <Compile Include="Unit\LoggingCalculatorTests.cs" />
-    <Compile Include="Unit\StubLogger.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SoftwareTestingDemo.CalculationLib\SoftwareTestingDemo.CalculationLib.csproj">

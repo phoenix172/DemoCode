@@ -6,10 +6,18 @@ namespace SoftwareTestingDemo.CalculationLib.Tests.Unit
     [TestFixture]
     public class BasicCalculatorTests
     {
+        private ICalculator _calculator;
+
+        [SetUp]
+        public void SetUp()
+        {
+            _calculator = new BasicCalculator();
+        }
+        
         [Test]
         public void Calculate_DivideByZero_ThrowsDivideByZeroException()
         {
-            ICalculator calculator = MakeCalculator();
+            ICalculator calculator = _calculator;
             Assert.That(() => calculator.Calculate(5, 0, MathOperation.Divide),
                 Throws.Exception.TypeOf<DivideByZeroException>());
         }
@@ -21,11 +29,9 @@ namespace SoftwareTestingDemo.CalculationLib.Tests.Unit
         public void Calculate_NumbersAndOperationReturnsCorrectResult_ReturnsCorrectResult
             (int operand1, int operand2, MathOperation operation, int expectedResult)
         {
-            ICalculator calculator = MakeCalculator();
+            ICalculator calculator = _calculator;
             int result = calculator.Calculate(operand1, operand2, operation);
             Assert.That(result, Is.EqualTo(expectedResult));
         }
-        
-        private ICalculator MakeCalculator() => new BasicCalculator();
     }
 }

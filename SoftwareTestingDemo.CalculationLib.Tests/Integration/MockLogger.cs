@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace SoftwareTestingDemo.CalculationLib.Tests.Unit
+namespace SoftwareTestingDemo.CalculationLib.Tests.Integration
 {
     internal class MockLogger : ILogger
     {
