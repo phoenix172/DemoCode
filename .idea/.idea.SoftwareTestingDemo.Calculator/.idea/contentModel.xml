@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\iyochev\.Rider2018.1\system\resharper-host\local\Transient\ReSharperHost\v12\SolutionCaches\_SoftwareTestingDemo.Calculator.908192590.00" t="ExcludeRecursive" />
-    <e p="C:\Users\iyochev\RiderProjects\SoftwareTestingDemo.Calculator" t="IncludeFlat">
+    <e p="C:\Users\Ivan\.Rider2018.1\system\resharper-host\local\Transient\ReSharperHost\v12\SolutionCaches\_SoftwareTestingDemo.Calculator.-654647597.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Ivan\RiderProjects\DemoCode" t="IncludeFlat">
       <e p="packages" t="ExcludeRecursive" />
       <e p="SoftwareTestingDemo.CalculationLib" t="IncludeRecursive">
         <e p="BasicCalculator.cs" t="Include" />
