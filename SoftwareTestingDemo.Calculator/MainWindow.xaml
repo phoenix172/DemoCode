@@ -29,7 +29,7 @@
                         CommandParameter="{x:Static lib:MathOperation.Subtract}">-</Button>
                 <Button Command="{Binding CalculateCommand}" Margin="3" FontSize="32" MinWidth="40" MinHeight="40"
                         CommandParameter="{x:Static lib:MathOperation.Multiply}">x</Button>
-                <Button Command="{Binding CalculateClib}" Margin="3" FontSize="32" MinWidth="40" MinHeight="40"
+                <Button Command="{Binding CalculateCommand}" Margin="3" FontSize="32" MinWidth="40" MinHeight="40"
                         CommandParameter="{x:Static lib:MathOperation.Divide}">/</Button>
             </StackPanel>
             <TextBox HorizontalAlignment="Stretch" FontSize="32"
