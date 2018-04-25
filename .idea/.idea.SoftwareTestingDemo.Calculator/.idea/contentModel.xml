@@ -31,7 +31,6 @@
         <e p="SoftwareTestingDemo.CalculationLib.Tests.csproj" t="IncludeRecursive" />
         <e p="Unit" t="Include">
           <e p="BasicCalculatorTests.cs" t="Include" />
-          <e p="FakeLogger.cs" t="Include" />
           <e p="LoggingCalculatorTests.cs" t="Include" />
           <e p="MockLogger.cs" t="Include" />
           <e p="StubLogger.cs" t="Include" />

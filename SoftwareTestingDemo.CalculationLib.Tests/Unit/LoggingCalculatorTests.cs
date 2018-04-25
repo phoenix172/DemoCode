@@ -16,10 +16,10 @@ namespace SoftwareTestingDemo.CalculationLib.Tests.Unit
         public void Calculate_LogsCorrectEntry(int operand1, int operand2, MathOperation operation,
             string expectedLogEntry)
         {
-            FakeLogger fakeLogger = MakeFakeLogger();
-            ICalculator calculator = MakeCalculator(fakeLogger);
+            MockLogger mockLogger = MakeMockLogger();
+            ICalculator calculator = MakeCalculator(mockLogger);
             calculator.Calculate(operand1, operand2, operation);
-            Assert.That(fakeLogger.LogEntries.Last(), Is.EqualTo(expectedLogEntry));
+            Assert.That(mockLogger.LogEntries.Last(), Is.EqualTo(expectedLogEntry));
         }
         
         [Test]
@@ -32,7 +32,7 @@ namespace SoftwareTestingDemo.CalculationLib.Tests.Unit
             calculator.Calculate(5, 5, MathOperation.Subtract);
             calculator.Calculate(5, 5, MathOperation.Multiply);
             
-            Assert.That(mockLogger.CallsCount, Is.EqualTo(3));
+            Assert.That(mockLogger.LogEntries.Count, Is.EqualTo(3));
         }
 
         [TestCase(5, 5, MathOperation.Add, 10)]
@@ -48,11 +48,9 @@ namespace SoftwareTestingDemo.CalculationLib.Tests.Unit
             
             Assert.That(result, Is.EqualTo(expectedResult));
         }
-        
-        private MockLogger MakeMockLogger()=> new MockLogger();
-        private StubLogger MakeStubLogger() => new StubLogger();
-        private FakeLogger MakeFakeLogger() => new FakeLogger();
-        
-        private ICalculator MakeCalculator(ILogger logger) => new LoggingCalculator(logger);
+
+        private static MockLogger MakeMockLogger()=> new MockLogger();
+        private static StubLogger MakeStubLogger() => new StubLogger();
+        private static ICalculator MakeCalculator(ILogger logger) => new LoggingCalculator(logger);
     }
 }
