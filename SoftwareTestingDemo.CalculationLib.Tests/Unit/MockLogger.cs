@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
 
-namespace SoftwareTestingDemo.CalculationLib.Tests.Integration
+namespace SoftwareTestingDemo.CalculationLib.Tests.Unit
 {
     internal class MockLogger : ILogger
     {
-        public int CallsCount { get; private set; } = 0;
+        public List<string> LogEntries { get; } = new List<string>();   
             
         public bool Log(string content)
         {
-            CallsCount++;
+            LogEntries.Add(content);
             return true;
         }
     }
