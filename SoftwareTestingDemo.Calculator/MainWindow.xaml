@@ -6,52 +6,40 @@
         xmlns:local="clr-namespace:SoftwareTestingDemo.Calculator"
         xmlns:lib="clr-namespace:SoftwareTestingDemo.CalculationLib;assembly=SoftwareTestingDemo.CalculationLib"
         mc:Ignorable="d"
-        Title="MainWindow" SizeToContent="WidthAndHeight" MaxWidth="800">
+        Title="MainWindow" SizeToContent="WidthAndHeight" ResizeMode="NoResize">
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
         <local:ObjectToTypeConverter x:Key="ObjectToTypeConverter" />
     </Window.Resources>
-    <Grid Margin="30">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <StackPanel>
-            <TextBox HorizontalAlignment="Stretch" FontSize="32"
-                     Text="{Binding Operand1, UpdateSourceTrigger=PropertyChanged, TargetNullValue=''}" Margin="5"/>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Command="{Binding CalculateCommand}" Margin="3" FontSize="32" MinWidth="40" MinHeight="40"
-                        CommandParameter="{x:Static lib:MathOperation.Add}">+</Button>
-                <Button Command="{Binding CalculateCommand}" Margin="3" FontSize="32" MinWidth="40" MinHeight="40"
-                        CommandParameter="{x:Static lib:MathOperation.Subtract}">-</Button>
-                <Button Command="{Binding CalculateCommand}" Margin="3" FontSize="32" MinWidth="40" MinHeight="40"
-                        CommandParameter="{x:Static lib:MathOperation.Multiply}">x</Button>
-                <Button Command="{Binding CalculateCommand}" Margin="3" FontSize="32" MinWidth="40" MinHeight="40"
-                        CommandParameter="{x:Static lib:MathOperation.Divide}">/</Button>
-            </StackPanel>
-            <TextBox HorizontalAlignment="Stretch" FontSize="32"
-                     Text="{Binding Operand2, UpdateSourceTrigger=PropertyChanged, TargetNullValue=''}" Margin="5"/>
-            <DockPanel Margin="5"
-                       HorizontalAlignment="Center">
-                <TextBlock HorizontalAlignment="Center" FontSize="32" Margin="0 0 10 0">=</TextBlock>
-                <TextBlock Text="{Binding Result}" FontSize="32" Foreground="Green"/>
-            </DockPanel>
-            <ComboBox HorizontalAlignment="Stretch" FontSize="32" ItemsSource="{Binding CalculatorImplementationsView}" IsSynchronizedWithCurrentItem="True">
-                <ComboBox.ItemTemplate>
-                    <DataTemplate>
-                        <TextBlock Text="{Binding Converter={StaticResource ObjectToTypeConverter}}" />
-                    </DataTemplate>
-                </ComboBox.ItemTemplate>
-            </ComboBox>
+    <StackPanel Margin="30">
+        <TextBox HorizontalAlignment="Stretch" FontSize="32"
+                 Text="{Binding Operand1, UpdateSourceTrigger=PropertyChanged, TargetNullValue=''}" Margin="5"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Command="{Binding CalculateCommand}" Margin="3" FontSize="32" MinWidth="40" MinHeight="40"
+                    CommandParameter="{x:Static lib:MathOperation.Add}">+</Button>
+            <Button Command="{Binding CalculateCommand}" Margin="3" FontSize="32" MinWidth="40" MinHeight="40"
+                    CommandParameter="{x:Static lib:MathOperation.Subtract}">-</Button>
+            <Button Command="{Binding CalculateCommand}" Margin="3" FontSize="32" MinWidth="40" MinHeight="40"
+                    CommandParameter="{x:Static lib:MathOperation.Multiply}">x</Button>
+            <Button Command="{Binding CalculateCommand}" Margin="3" FontSize="32" MinWidth="40" MinHeight="40"
+                    CommandParameter="{x:Static lib:MathOperation.Divide}">/</Button>
         </StackPanel>
-        <DockPanel Grid.Column="1" LastChildFill="True" Margin="10"
-                   HorizontalAlignment="Center" 
-                   Visibility="{Binding HasError, Converter={StaticResource BooleanToVisibilityConverter}}">
-            <Label DockPanel.Dock="Top" HorizontalContentAlignment="Center" Foreground="Red">Error</Label>
-            <TextBlock TextWrapping="Wrap" Text="{Binding ErrorMessage}" Foreground="Red"/>
+        <TextBox HorizontalAlignment="Stretch" FontSize="32"
+                 Text="{Binding Operand2, UpdateSourceTrigger=PropertyChanged, TargetNullValue=''}" Margin="5"/>
+        <DockPanel Margin="5"
+                   HorizontalAlignment="Center">
+            <TextBlock HorizontalAlignment="Center" FontSize="32" Margin="0 0 10 0">=</TextBlock>
+            <TextBlock Text="{Binding Result}" FontSize="32" Foreground="Green"/>
         </DockPanel>
-    </Grid>
+        <TextBlock TextWrapping="Wrap" Text="{Binding ErrorMessage}" Foreground="Red" FontSize="32" HorizontalAlignment="Center"
+                   Visibility="{Binding HasError, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+        <ComboBox HorizontalAlignment="Stretch" FontSize="32" Margin="5"
+                  ItemsSource="{Binding CalculatorImplementationsView}" IsSynchronizedWithCurrentItem="True">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Converter={StaticResource ObjectToTypeConverter}}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+    </StackPanel>
 </Window>

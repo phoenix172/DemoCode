@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Data;
 using SoftwareTestingDemo.CalculationLib;
@@ -8,7 +9,8 @@ namespace SoftwareTestingDemo.Calculator
 {
     public class CalculatorViewModel : INotifyPropertyChanged, ICalculatorViewModel
     {
-        private int? _operand1, _operand2, _result;
+        private int? _operand1, _operand2;
+        private string _result;
         private string _errorMessage;
 
         public CalculatorViewModel()
@@ -22,10 +24,14 @@ namespace SoftwareTestingDemo.Calculator
             CalculateCommand = new CalculateCommand(this, CalculatorImplementation);
             CalculateCommand.Calculated += (s, e) =>
             {
-                Result = e;
+                Result = e.ToString();
                 ErrorMessage = string.Empty;
             };
-            CalculateCommand.Error += (s, e) => ErrorMessage = e.ToString();
+            CalculateCommand.Error += (s, e) =>
+            {
+                ErrorMessage = e is DivideByZeroException 
+                    ? "Cannot divide by zero" : e.ToString();
+            };
         }
 
         private void InitCalculators()
@@ -63,7 +69,7 @@ namespace SoftwareTestingDemo.Calculator
             }
         }
 
-        public int? Result
+        public string Result
         {
             get => _result;
             private set
